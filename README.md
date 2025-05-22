@@ -8,6 +8,6 @@ Resisto - a simple chrome extension that helps you focus by blocking distracting
 # How to install the chrome extension
 1. Click the green **Code** button in the top right of the repository.
 2. Select **Download ZIP** and extract the `.zip` file to a location on your computer.
-3. Go to [Link Text](chrome://extensions/)
+3. Go to `chrome://extensions/`
 4. Turn on developer mode and press **Load unpacked**
 5. Select the extracted zip file and upload it.
