@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Resisto",
+  "version": "1.0",
+  "permissions": ["tabs", "storage", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "blockSites.html",
+    "default_icon": "lock.png"
+  }
+}
