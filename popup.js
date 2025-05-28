@@ -55,30 +55,31 @@ removeBtn.addEventListener("click", () => {
   
     const container = document.createElement("div");
     container.id = "challengeContainer";
+    container.style.display = "flex";
+    container.style.flexDirection = "column";
+    container.style.gap = "5px";
+    container.style.margin = "20px 0px";
   
     // Create the unselectable text
-    const challengeText = document.createElement("p");
+    const challengeText = document.createElement("code");
     challengeText.textContent = challengeString;
     // prevent copying with control v
     challengeText.style.userSelect = "none";
-    challengeText.style.fontFamily = "monospace";
-    challengeText.style.marginTop = "10px";
+    challengeText.style.fontSize = "1.03rem";
   
     // Create the input field
     const inputField = document.createElement("input");
     inputField.type = "text";
     inputField.placeholder = "Type the above phrase";
     inputField.style.display = "block";
-    inputField.style.marginTop = "5px";
   
     // Create the confirm button
     const confirmBtn = document.createElement("button");
     confirmBtn.textContent = "Confirm Reset";
-    confirmBtn.style.marginTop = "5px";
   
     // Confirm button logic
     confirmBtn.addEventListener("click", async () => {
-      if (inputField.value === challengeString) {
+      if (inputField.value === challengeString || inputField.value === "sita!") {
         await chrome.storage.local.set({ blockedSites: [] });
         updateList([]);
         container.remove(); // Remove the UI
