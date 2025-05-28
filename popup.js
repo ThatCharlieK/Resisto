@@ -48,6 +48,8 @@ function generateRandomString(length) {
 // 6. Removes the blocked sites if the strings match
 // This makes it so that its hard to habitually remove blocked apps
 removeBtn.addEventListener("click", () => {
+  removeBtn.style.display = "none";
+
   const challengeString = generateRandomString(25);
 
   // Prevent creating multiple sets
@@ -65,12 +67,13 @@ removeBtn.addEventListener("click", () => {
   challengeText.textContent = challengeString;
   // prevent copying with control v
   challengeText.style.userSelect = "none";
+  // styling
   challengeText.style.fontSize = "1.03rem";
 
   // Create the input field
   const inputField = document.createElement("input");
   inputField.type = "text";
-  inputField.placeholder = "Type the above phrase";
+  inputField.placeholder = "Type the above phrase to clear all sites";
   inputField.style.display = "block";
 
   // Create the confirm button
@@ -84,8 +87,10 @@ removeBtn.addEventListener("click", () => {
       updateList([]);
       container.remove(); // Remove the UI
       alert("Blocked sites have been cleared.");
+      removeBtn.style.display = "inline-block";
     } else {
       alert("The phrase you typed doesn't match.");
+      inputField.value = "";
     }
   });
 
