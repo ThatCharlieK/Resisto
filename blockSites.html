@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <h1>Website Blocker</h1>
-    <input type="text" id="websiteInput" placeholder="Enter website (e.g. youtube.com)">
-    <button id="addBtn">Add Website</button>
-    <ul id="blockedList"></ul>
-    <button id="removeBtn">Clear websites</button>
-    <script src="popup.js"></script>
-  </body>
+
+<body style="width: 250px;">
+  <h1 style="text-align: center;">Website Blocker</h1>
+  <button id="xBtn" style="position: fixed; top: 10px; right: 10px; background-color: transparent; border: 0; font-size: 1rem; color: red;">X</button>
+  <div style="display: flex; flex-direction: row; gap: 5px;">
+    <input type="text" id="websiteInput" placeholder="youtube.com" style="width: 300%;">
+    <button id="addBtn" style="width: 100%;">Add Site</button>
+  </div>
+  <ul id="blockedList"></ul>
+  <button id="removeBtn" style="display: none; width: 100%;">Clear Sites</button>
+  <script src="popup.js"></script>
+</body>
+
 </html>
