@@ -2,6 +2,9 @@ const input = document.getElementById("websiteInput");
 const addBtn = document.getElementById("addBtn");
 const list = document.getElementById("blockedList");
 const removeBtn = document.getElementById("removeBtn");
+const xBtn = document.getElementById("xBtn");
+
+xBtn.addEventListener("click", () => window.close());
 
 // updates the html which displays a simple list of the blocked sites
 function updateList(blockedSites) {
