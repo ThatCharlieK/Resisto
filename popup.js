@@ -24,6 +24,7 @@ addBtn.addEventListener("click", async () => {
       await chrome.storage.local.set({ blockedSites });
       updateList(blockedSites);
     }
+    removeBtn.style.display = "inline-block";
     input.value = "";
   }
 });
@@ -87,7 +88,6 @@ removeBtn.addEventListener("click", () => {
       updateList([]);
       container.remove(); // Remove the UI
       alert("Blocked sites have been cleared.");
-      removeBtn.style.display = "inline-block";
     } else {
       alert("The phrase you typed doesn't match.");
       inputField.value = "";
@@ -104,4 +104,5 @@ removeBtn.addEventListener("click", () => {
 // Load the list on popup open, or make an empty list as a placeholder
 chrome.storage.local.get({ blockedSites: [] }, (result) => {
   updateList(result.blockedSites);
+  if (list.hasChildNodes()) removeBtn.style.display = "inline-block";
 });
